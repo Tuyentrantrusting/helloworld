@@ -11,7 +11,7 @@ def hello_world():
     name = os.environ.get("NAME", "World")
     username = request.args.get('username')
     password = request.args.get('password')
-    return "Hello {}! Your username is {}".format(name).format(username)
+    return "Hello {}! Your username is {}".format(name, username)
     
 
 if __name__ == "__main__":
