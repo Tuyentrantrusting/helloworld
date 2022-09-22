@@ -13,6 +13,10 @@ def hello_world():
     password = request.args.get('password')
     return "Hello {}! Your username is {}".format(name, username)
     
-
+@app.route('/runjob', methods=['GET', 'POST'])
+def runjob():
+    jobname = request.args.get('jobname')
+    return "Running job" + jobname
+    
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
