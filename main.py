@@ -1,7 +1,6 @@
 import os
-#%%
-from flask import Flask
-from flask import request
+from re import template
+from flask import Flask, request, render_template
 import importlib
 #from jobs.test_ping import simple_ping
 
@@ -14,13 +13,15 @@ def hello_world():
     username = request.args.get('username')
     password = request.args.get('password')
     #hungcreds = os.environ.get("hunggmail")
-    return "Hello {}! Your username is {}".format(name, username)
+    #return "Hello {}! Your username is {}".format(name, username)
+    return render_template('index.html')
     
 @app.route('/runjob', methods=['GET', 'POST'])
 def runjob():
     jobname = request.args.get('jobname')
-    importlib.import_module('jobs.'+jobname)
-    return "Running job: " + jobname
+    job_module = importlib.import_module('jobs.'+jobname)
+    message = job_module.get_message()
+    return render_template('index.html', jobname=jobname, job_message=message)
 
 @app.route('/printlog')
 def printMsg():

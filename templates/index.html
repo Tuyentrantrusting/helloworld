@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %} - DA JOB</title>
+    <style>
+        nav a {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">DA All job</a>
+        <a href="#">Guide</a>
+    </nav>
+    <h1>Hello World!</h1>
+    <h2>Welcome to TS DA job center!</h2>
+    <h3>Job: {{ jobname }}</h3>
+    <h4>Message: {{ job_message }}</h4>
+    <hr>
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>
