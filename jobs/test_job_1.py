@@ -2,6 +2,7 @@
 import this
 from flask import Flask
 from flask import request
+import logging
 
 app = Flask(__name__)
 
@@ -13,3 +14,6 @@ message = 'Tuyen write a message: Hello from test_job_1.py'
 
 def get_message():
     return message
+
+
+logging.warning("This is a warning!")
