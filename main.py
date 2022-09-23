@@ -19,6 +19,13 @@ def hello_world():
 def runjob():
     jobname = request.args.get('jobname')
     return "Running job" + jobname
+
+@app.route('/printlog')
+def printMsg():
+    app.logger.warning('testing warning log')
+    app.logger.error('testing error log')
+    app.logger.info('testing info log')
+    return "Printed log. Check your console"
     
 
 
