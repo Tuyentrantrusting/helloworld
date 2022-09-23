@@ -20,7 +20,10 @@ def hello_world():
 def runjob():
     jobname = request.args.get('jobname')
     job_module = importlib.import_module('jobs.'+jobname)
-    message = job_module.message
+    if hasattr(job_module, 'get_message'):
+        message = job_module.get_message()
+    else:
+        message = ''
     return render_template('index.html', jobname=jobname, job_message=message)
 
 @app.route('/printlog')
