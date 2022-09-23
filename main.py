@@ -2,7 +2,7 @@ import os
 
 from flask import Flask
 from flask import request
-from jobs import 
+from jobs.test_ping import simple_ping
 
 app = Flask(__name__)
 
