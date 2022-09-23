@@ -1,8 +1,6 @@
-import pandas as pd 
-import numpy as np
+print('This is test_ping job. Hehe')
+print('Tuyen is printing a message...')
 
-def main():
-    simple_ping()
+#do something here
+a = 1 + 1
 
-def simple_ping(message):
-    return "Job simple_ping run. Message is: " + message
