@@ -19,9 +19,8 @@ def hello_world():
 @app.route('/runjob', methods=['GET', 'POST'])
 def runjob():
     jobname = request.args.get('jobname')
-    importlib.import_module(jobname)
-    jobname.main()
-    return "Running job" + jobname
+    importlib.import_module('jobs.'+jobname)
+    return "Running job: " + jobname
 
 @app.route('/printlog')
 def printMsg():
