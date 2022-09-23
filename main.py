@@ -12,7 +12,7 @@ def hello_world():
     name = os.environ.get("NAME", "World")
     username = request.args.get('username')
     password = request.args.get('password')
-    hungcreds = os.environ.get("hunggmail")
+    #hungcreds = os.environ.get("hunggmail")
     return "Hello {}! Your username is {}. Hung Creds is {}".format(name, username,hungcreds)
     
 @app.route('/runjob', methods=['GET', 'POST'])
